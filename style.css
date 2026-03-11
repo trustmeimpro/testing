@@ -1,0 +1,10 @@
+body {
+    background-color: black;
+}
+img {
+    width: 100%;
+    margin-bottom: 2em;
+}
+.list {
+    column-count: 2;
+}
