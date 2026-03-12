@@ -1,10 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
     background-color: black;
 }
+
 img {
     width: 100%;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
+    display: block;
+    break-inside: avoid;
+}
+.logo {
+    z-index: 10;
+    font-size: 20px;
+}
+
+.logo h1 a {
+    text-decoration: none;
+    color: aliceblue;
+    
+}
+
+.about h1 a {
+    text-decoration: none;
+    color: black;
+    font-size: 3rem;
+}
+.off_menu {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    left: -100%;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;       
+    text-align: center;
+    overflow-y: auto;
+    justify-content: center;
+    font-size: 2rem;
+    transition: .3s ease;
+    z-index: 9;
+}
+
+.off_menu ul li {
+    list-style: none;
+    padding: 0.4em 0;
+}
+.off_menu ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+
+nav {
+    padding: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    background-color: black;
+    transition: background-color 0.3s ease;
+}
+
+.ham_menu {
+    height: 40px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+    z-index: 10;
+}
+.ham_menu span {
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
 }
 .list {
     column-count: 2;
+}
+.randomImage {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.logo.active h1 a{
+    color: black;
+}
+.off_menu.active {
+    left: 0;
+}
+
+nav.active {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+}
+
+.ham_menu.active span {
+    background-color: black;
+}
+.ham_menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham_menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham_menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham_menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham_menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
